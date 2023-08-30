@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Tugas Minggu 3</h1>
+
+<h2>Case Pertama</h2>
+
+<p>Diketahui air memiliki kondisi tertentu kapan cair, uap maupun beku, berikut 
+    rentangnya <br>
+    - Beku suhu minus -100 sampai 0 <br>
+    - Cair suhu 1 sampai 100 <br>
+    - Uap suhu 101 sampai 500 <br>
+    - Suhu selain rentang tersebut tidak terdefinisi <br>
+    </p>
+
+<button onclick="case1()">Klik disini</button>
+
+<h2>Case Kedua</h2>
+
+<p>Diketahui SPBU memiliki logika sebagai berikut <br>
+    - Jika plat kuning atau motor maka BBM subsidi <br>
+    - Jika mobil CC kurang dari 1500 maka PERTAMAX <br>
+    - Jika mobil CC diatas atau sama dengan 1500 maka pertamax turbo <br>
+    </p>
+
+<button onclick="case2()">Klik disini</button>
+
+<script>
+function case1() {
+let suhuAir = prompt("Masukkan suhu dari air");
+let kondisiAir = '';
+if (suhuAir >= -100 && suhuAir <= 0){
+    kondisiAir = 'beku';
+} else if (suhuAir >= 1 && suhuAir <= 100) {
+    kondisiAir = 'cair';
+} else if (suhuAir >= 101 && suhuAir <= 500) {
+    kondisiAir = 'uap';
+} else {
+    kondisiAir = 'tidak terdefinisi';
+}
+
+alert(`Kondisi air pada suhu ${suhuAir} derajat adalah ${kondisiAir}.`)
+
+}
+
+function case2() {
+let jenisBBM = '';
+let jenisKendaraan = prompt("Masukkan jenis kendaraan");
+if(jenisKendaraan === 'motor'){
+jenisBBM = 'BBM Subsidi';
+} else if (jenisKendaraan === 'mobil'){
+    let warnaPlat = prompt("Masukkan warna dari plat");
+    if (warnaPlat === 'kuning'){
+        jenisBBM = 'BBM Subsidi';
+    } else {
+        let ccKendaraan = prompt("Masukkan CC dari mobil");
+        if (ccKendaraan < 1500) {
+            jenisBBM = 'PERTAMAX';
+        } else if (ccKendaraan >= 1500) {
+            jenisBBM = 'Pertamax Turbo'
+        } 
+    }
+} else {
+    jenisBBM = 'tidak tergolong';
+}
+
+alert(`Jenis BBM yang dipakai kendaraan adalah ${jenisBBM}.`)
+
+}
+</script>
+
+</body>
+</html>
